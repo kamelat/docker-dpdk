@@ -17,9 +17,9 @@
 #  Define Global Variables and Functions
 ################################################################################
 
-URL=http://www.dpdk.org/browse/dpdk/snapshot/dpdk-2.0.0.tar.gz
+VERSION=17.08.1
+URL=http://www.dpdk.org/browse/dpdk/snapshot/$VERSION.tar.gz
 BASEDIR=/root
-VERSION=2.0.0
 PACKAGE=dpdk
 DPDKROOT=$BASEDIR/$PACKAGE-$VERSION
 CONFIG=x86_64-native-linuxapp-gcc
@@ -34,9 +34,9 @@ sed -ri 's,(PMD_PCAP=).*,\1y,' build/.config
 make config T=$CONFIG install
 
 # Download/Build pktgen-dpdk
-URL=http://www.dpdk.org/browse/apps/pktgen-dpdk/snapshot/pktgen-dpdk-pktgen-2.8.5-2.tar.xz
+VERSION=3.4.9
+URL=http://www.dpdk.org/browse/apps/pktgen-dpdk/snapshot/pktgen-dpdk-pktgen-$VERSION.tar.xz
 BASEDIR=/root
-VERSION=2.8.5-2
 PACKAGE=pktgen
 PKTGENROOT=$BASEDIR/$PACKAGE-$VERSION
 cd $BASEDIR
